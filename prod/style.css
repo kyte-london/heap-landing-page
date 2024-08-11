@@ -74,6 +74,67 @@ header > .copy-container {max-width: 620px;}
   gap: 8px;
 }
 
+/* logo experiments start here 
+
+.logo {
+  width: 128px;
+  height: 128px;
+  background-image: url(../assets/icon.png);
+  background-size: cover;
+  border-radius: 34px;
+  box-shadow: 
+    0px 6px 14px -6px rgba(24, 39, 75, 0.12), 
+    0px 10px 32px -4px rgba(24, 39, 75, 0.10);
+}
+
+*/
+
+.icon-container {
+  width: 128px;
+  height: 128px;
+  background-image: url(../assets/logo/icon-background.png);
+  background-size: 256px;
+  background-position: top center;
+  border-radius: 34px;
+  position: relative;
+  box-shadow: 
+    0px 6px 8px -6px rgba(24, 39, 75, 0.12), 
+    0px 8px 16px -6px rgba(24, 39, 75, 0.08);
+  transition: 
+    transform .2s ease,
+    background-position .6s ease,
+    box-shadow .2s ease;
+
+}
+
+.icon-container:hover {
+  transform: scale(1.05);
+  background-position: bottom center;
+  box-shadow: 
+    0px 8px 22px -6px rgba(24, 39, 75, 0.12), 
+    0px 14px 64px -4px rgba(24, 39, 75, 0.12);
+}
+
+.icon-container > .logo {
+  width: 128px;
+  height: 128px;
+  background-image: url(../assets/logo/icon-logo.png);
+  background-size: 128px;
+  background-position: top center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transition: transform .6s ease;
+}
+
+.icon-container:hover > .logo {
+  transform: 
+   rotate(60deg);
+}
+
+
+/* logo experiments end here */
+
 .cta-container {
   display: flex;
   flex-direction: column;
@@ -90,17 +151,6 @@ header > .copy-container {max-width: 620px;}
   border-radius: 16px;
   background: #191B1E;
   color: white;
-}
-
-.logo {
-  width: 128px;
-  height: 128px;
-  background-image: url(../assets/icon.png);
-  background-size: cover;
-  border-radius: 34px;
-  box-shadow: 
-    0px 6px 14px -6px rgba(24, 39, 75, 0.12), 
-    0px 10px 32px -4px rgba(24, 39, 75, 0.10);
 }
 
 /* sections */
@@ -185,6 +235,13 @@ section {gap: 16px;}
 }
 
 /* footer */
+
+footer {
+  background-image: url(../assets/footer-rainbow.png);
+  background-position: bottom center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 
 footer > .footer-container {
   display: flex;
