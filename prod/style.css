@@ -315,7 +315,7 @@ img {
 
 .card:nth-child(2) {
   transform: 
-    translate(0px, 0px)
+    translate(0px, 6px)
     rotate(0deg);
   z-index: 20;
 }
