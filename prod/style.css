@@ -74,21 +74,6 @@ header > .copy-container {max-width: 620px;}
   gap: 8px;
 }
 
-/* logo experiments start here 
-
-.logo {
-  width: 128px;
-  height: 128px;
-  background-image: url(../assets/icon.png);
-  background-size: cover;
-  border-radius: 34px;
-  box-shadow: 
-    0px 6px 14px -6px rgba(24, 39, 75, 0.12), 
-    0px 10px 32px -4px rgba(24, 39, 75, 0.10);
-}
-
-*/
-
 .icon-container {
   width: 128px;
   height: 128px;
@@ -101,10 +86,9 @@ header > .copy-container {max-width: 620px;}
     0px 6px 8px -6px rgba(24, 39, 75, 0.12), 
     0px 8px 16px -6px rgba(24, 39, 75, 0.08);
   transition: 
-    transform .3s ease,
-    background-position .6s ease,
-    box-shadow .3s ease;
-
+    transform .3s ease-out,
+    background-position .6s ease-out,
+    box-shadow .3s ease-out;
 }
 
 .icon-container:hover {
@@ -124,7 +108,7 @@ header > .copy-container {max-width: 620px;}
   position: absolute;
   top: 0px;
   left: 0px;
-  transition: transform .8s ease;
+  transition: transform .8s ease-out;
 }
 
 .icon-container:hover > .logo {
@@ -295,4 +279,94 @@ footer > .footer-container > .icon {
 img {
   max-width: 320px;
   width: 100%;
+}
+
+
+/* card stack */
+
+.stack {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card {
+  width: 144px;
+  height: 144px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 16px;
+  box-shadow: 
+    0px 6px 8px -6px rgba(24, 39, 75, 0.12), 
+    0px 8px 16px -6px rgba(24, 39, 75, 0.08);
+  transition: 
+    transform .3s ease-out,
+    box-shadow .3s ease-out;
+  margin-bottom: 48px;
+}
+
+.card:first-child {
+  transform: 
+    translate(128px, 8px)
+    rotate(-6deg);
+  z-index: 10;
+}
+
+.card:nth-child(2) {
+  transform: 
+    translate(0px, 0px)
+    rotate(0deg);
+  z-index: 20;
+}
+
+.card:last-child {
+  transform: 
+    translate(-128px, 8px) 
+    rotate(6deg);
+  z-index: 30;
+}
+
+section:hover > .stack > .card {
+  box-shadow: 
+    0px 8px 22px -6px rgba(24, 39, 75, 0.12), 
+    0px 14px 64px -4px rgba(24, 39, 75, 0.12);
+}
+
+section:hover > .stack > .card:first-child {
+  transform: 
+    translate(32px, 8px) 
+    rotate(-12deg);
+} 
+
+section:hover > .stack > .card:nth-child(2) {
+  transform: 
+    translate(0px, -16px) 
+    rotate(0deg);
+} 
+
+section:hover > .stack > .card:last-child {
+  transform: 
+    translate(-32px, 8px) 
+    rotate(12deg);
+} 
+
+.card.salesforce {background-image: url(../assets/features/card-salesforce.png);}
+.card.notion {background-image: url(../assets/features/card-notion.png);}
+.card.csv {background-image: url(../assets/features/card-csv.png);}
+
+.card.photo {
+  background-image: url(../assets/features/card-photo.png);
+  width: 192px;
+  height: 152.25px;
+}
+.card.text {
+  background-image: url(../assets/features/card-text.png);
+  width: 192px;
+  height: 116.5px;
+}
+.card.audio {
+  background-image: url(../assets/features/card-audio.png);
+  width: 192px;
+  height: 90px;
 }
