@@ -308,21 +308,21 @@ img {
 
 .card:first-child {
   transform: 
-    translate(128px, 8px)
+    translate(128px, 2px)
     rotate(-6deg);
   z-index: 10;
 }
 
 .card:nth-child(2) {
   transform: 
-    translate(0px, 6px)
+    translate(0px, 0px)
     rotate(0deg);
   z-index: 20;
 }
 
 .card:last-child {
   transform: 
-    translate(-128px, 8px) 
+    translate(-128px, 2px) 
     rotate(6deg);
   z-index: 30;
 }
@@ -335,7 +335,7 @@ section:hover > .stack > .card {
 
 section:hover > .stack > .card:first-child {
   transform: 
-    translate(32px, 8px) 
+    translate(32px, 0px) 
     rotate(-12deg);
 } 
 
@@ -347,7 +347,7 @@ section:hover > .stack > .card:nth-child(2) {
 
 section:hover > .stack > .card:last-child {
   transform: 
-    translate(-32px, 8px) 
+    translate(-32px, 0px) 
     rotate(12deg);
 } 
 
