@@ -80,7 +80,7 @@
 
   <section id="multimodal">
     
-    <div class="stack">
+    <div class="stack interactive">
       <div class="card photo">&nbsp;</div>
       <div class="card text">&nbsp;</div>
       <div class="card audio">&nbsp;</div>
@@ -98,7 +98,7 @@
 
     <div class="input-container">
 
-      <div class="input">
+      <div class="input interactive">
         <div class="toggle spark">&nbsp;</div>
         <div class="toggle close">&nbsp;</div>
         <img class="selection" src="assets/input/selection.png" alt="">
@@ -117,7 +117,7 @@
 
   <section id="integrations">
     
-    <div class="stack">
+    <div class="stack interactive">
       <div class="card salesforce">&nbsp;</div>
       <div class="card notion">&nbsp;</div>
       <div class="card csv">&nbsp;</div>
@@ -221,5 +221,39 @@
 
   <div class="rainbow">&nbsp;</div>
 
+
+  <script>
+
+  function isElementFullyVisible(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  function checkVisibility() {
+    const stacks = document.querySelectorAll('.interactive');
+    
+    stacks.forEach(stack => {
+      if (isElementFullyVisible(stack)) {
+        setTimeout(() => {
+          stack.classList.add('active');
+        }, 400); 
+      } else {
+        stack.classList.remove('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', checkVisibility);
+  window.addEventListener('resize', checkVisibility);
+
+  checkVisibility();
+
+
+  </script>
 </body>
 </html>

@@ -117,9 +117,6 @@ header > .copy-container {max-width: 620px;}
    scale(1.05);
 }
 
-
-/* logo experiments end here */
-
 .cta-container {
   display: flex;
   flex-direction: column;
@@ -142,14 +139,16 @@ header > .copy-container {max-width: 620px;}
 
 header, section, footer {
   display: flex;
-  padding: 64px 32px;
+  padding: 88px 32px;
   flex-direction: column;
   align-items: center;
   align-self: stretch;
   z-index: 20;
 }
 
-section {gap: 16px;}
+section {
+  gap: 40px;
+}
 
 .copy-container {
   display: flex;
@@ -327,25 +326,25 @@ header > img {
   z-index: 30;
 }
 
-section:hover > .stack > .card {
+ .stack.active > .card {
   box-shadow: 
     0px 8px 22px -6px rgba(24, 39, 75, 0.12), 
     0px 14px 64px -4px rgba(24, 39, 75, 0.12);
 }
 
-section:hover > .stack > .card:first-child {
+ .stack.active > .card:first-child {
   transform: 
     translate(32px, 0px) 
     rotate(-12deg);
 } 
 
-section:hover > .stack > .card:nth-child(2) {
+ .stack.active > .card:nth-child(2) {
   transform: 
     translate(0px, -16px) 
     rotate(0deg);
 } 
 
-section:hover > .stack > .card:last-child {
+ .stack.active > .card:last-child {
   transform: 
     translate(-32px, 0px) 
     rotate(12deg);
@@ -371,11 +370,10 @@ section:hover > .stack > .card:last-child {
   height: 90px;
 }
 
-
 /* entry widget */
 
 .input-container {
-  width: 460px;
+  width: 345px;
   height: 134px;
   margin-bottom: 40px;
   display:flex;
@@ -388,7 +386,7 @@ section:hover > .stack > .card:last-child {
   box-shadow: 
     0px 6px 8px -6px rgba(24, 39, 75, 0.12), 
     0px 8px 16px -6px rgba(24, 39, 75, 0.08);
-  border-radius: 24px;
+  border-radius: 16px;
   overflow: hidden;
   position: relative;
   padding-top: 0px;
@@ -409,30 +407,31 @@ section:hover > .stack > .card:last-child {
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
+  position: relative;
 }
 
-
-#conversation .input > img.selection {
+.input > img.selection {
   position: absolute;
   top: 0;
   opacity: 0;
   transition: 
-    opacity .2s ease-out .1s;
+    opacity .2s ease-out;
   z-index: 1;
 }
 
 .input > .toggle {
-  width: 44px;
-  height: 44px;
+  width: 33px;
+  height: 33px;
   position: absolute;
-  bottom: 18px;
-  left: 18px;
+  bottom: 15px;
+  left: 15px;
   transition:
     transform .2s ease-out,
     opacity .2s ease-out;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
+  z-index: 3;
 }
 
 .input > .toggle.spark {
@@ -444,28 +443,28 @@ section:hover > .stack > .card:last-child {
 .input > .toggle.close {
   background-image: url(../assets/input/close.png);
   opacity: 0;
-  transform: rotate(-45deg);
+  transform: rotate(-60deg);
 }
 
-#conversation:hover .input > .toggle.spark {
+.input.active > .toggle.spark {
   opacity: 0;
-  transform: rotate(45deg);
+  transform: rotate(60deg);
 }
 
-#conversation:hover .input > .toggle.close {
+.input.active > .toggle.close {
   opacity: 1;
   transform: rotate(0deg);
 }
 
-#conversation:hover .input {
-  padding-top: 50px;
+.input.active {
+  padding-top: 38px;
 }
 
-#conversation:hover .input > img.selection {
+.input.active > img.selection {
   opacity: 1;
 }
 
-#conversation:hover .input {
+.input.active {
   transform: scale(1.04);
   box-shadow: 
     0px 8px 22px -6px rgba(24, 39, 75, 0.12), 
