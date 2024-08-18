@@ -40,7 +40,7 @@
 
 	<!--meta name="apple-mobile-web-app-status-bar-style" content="#ffffff"-->
 
-	<title>Synq</title>
+	<title>Synq — The smart way to collect leads on the go</title>
 
 </head>
 <body>
@@ -224,35 +224,23 @@
 
   <script>
 
-  function isElementFullyVisible(el) {
-    const rect = el.getBoundingClientRect();
-    return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-  }
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('active');
+          }, 600);
+          
+          return;
+        }
 
-  function checkVisibility() {
-    const stacks = document.querySelectorAll('.interactive');
-    
-    stacks.forEach(stack => {
-      if (isElementFullyVisible(stack)) {
-        setTimeout(() => {
-          stack.classList.add('active');
-        }, 400); 
-      } else {
-        stack.classList.remove('active');
-      }
+        entry.target.classList.remove('active');
+      });
     });
-  }
 
-  window.addEventListener('scroll', checkVisibility);
-  window.addEventListener('resize', checkVisibility);
+    const squares = document.querySelectorAll('.interactive');
 
-  checkVisibility();
-
+    squares.forEach((element) => observer.observe(element));
 
   </script>
 </body>
