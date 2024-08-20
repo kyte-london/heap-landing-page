@@ -287,6 +287,7 @@ header > img {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  position: relative;
 }
 
 .card {
@@ -310,6 +311,7 @@ header > img {
     translate(128px, 2px)
     rotate(-6deg);
   z-index: 10;
+  position: absolute;
 }
 
 .card:nth-child(2) {
@@ -324,6 +326,7 @@ header > img {
     translate(-128px, 2px) 
     rotate(6deg);
   z-index: 30;
+  position: absolute;
 }
 
  .stack.active > .card {
@@ -349,6 +352,61 @@ header > img {
     translate(-32px, 0px) 
     rotate(12deg);
 } 
+
+
+@media (max-width: 840px) {
+  /* stack responsive code */
+
+  .stack {
+    flex-direction: column;
+
+  }
+
+  .stack > .card:first-child {
+    transform: 
+      translate(0px, 128px) 
+      rotate(-6deg)
+      scale(1);
+  } 
+
+   .stack > .card:nth-child(2) {
+    transform: 
+      translate(0px, 0px) 
+      rotate(0deg)
+      scale(1);
+  } 
+
+   .stack > .card:last-child {
+    transform: 
+      translate(0px, -128px) 
+      rotate(6deg)
+      scale(1);
+  } 
+
+ /* .stack.active > .card:first-child {
+    transform: 
+      translate(0px, 0px) 
+      rotate(-12deg)
+      scale(0.6);
+  } 
+
+   .stack.active > .card:nth-child(2) {
+    transform: 
+      translate(0px, 0px) 
+      rotate(0deg)
+      scale(0.6);
+  } 
+
+   .stack.active > .card:last-child {
+    transform: 
+      translate(0px, 0px) 
+      rotate(12deg)
+      scale(0.6);
+  } 
+
+  */
+
+}
 
 .card.salesforce {background-image: url(../assets/features/card-salesforce.png);}
 .card.notion {background-image: url(../assets/features/card-notion.png);}
