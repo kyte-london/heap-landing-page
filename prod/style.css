@@ -162,7 +162,7 @@ section {
 .features-container {
   display: flex;
   width: 100%;
-  max-width: 1024px;
+  max-width: 800px;
   align-items: flex-start;
   gap: 64px;
   padding: 0;
@@ -191,7 +191,7 @@ section {
 .list-container {
   display: flex;
   width: 100%;
-  max-width: 1024px;
+  max-width: 800px;
   align-items: flex-start;
   align-content: flex-start;
   gap: 64px;
@@ -446,25 +446,25 @@ header > img {
   transform: rotate(-60deg);
 }
 
-.input.active > .toggle.spark {
+.input-container.active > .input > .toggle.spark {
   opacity: 0;
   transform: rotate(60deg);
 }
 
-.input.active > .toggle.close {
+.input-container.active > .input > .toggle.close {
   opacity: 1;
   transform: rotate(0deg);
 }
 
-.input.active {
+.input-container.active > .input {
   padding-top: 38px;
 }
 
-.input.active > img.selection {
+.input-container.active > .input > img.selection {
   opacity: 1;
 }
 
-.input.active {
+.input-container.active > .input {
   transform: scale(1.04);
   box-shadow: 
     0px 8px 22px -6px rgba(24, 39, 75, 0.12), 

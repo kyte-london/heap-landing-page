@@ -96,9 +96,9 @@
 
   <section id="conversation">
 
-    <div class="input-container">
+    <div class="input-container interactive">
 
-      <div class="input interactive">
+      <div class="input">
         <div class="toggle spark">&nbsp;</div>
         <div class="toggle close">&nbsp;</div>
         <img class="selection" src="assets/input/selection.png" alt="">
@@ -164,10 +164,10 @@
     </div>
 
     <ul class="list-container">
-      <li>
+      <!--li>
         <div class="icon plug"></div>
         <p>CRM integrations</p>
-      </li>
+      </li-->
 
       <li>
         <div class="icon tag--group"></div>
@@ -179,10 +179,10 @@
         <p>Lock screen shortcuts</p>
       </li>
 
-      <li>
+      <!--li>
         <div class="icon notification"></div>
         <p>Two-way sync</p>
-      </li>
+      </li-->
 
       <li>
         <div class="icon user--follow"></div>
@@ -226,17 +226,16 @@
 
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
+        if (entry.intersectionRatio === 1) { 
           setTimeout(() => {
             entry.target.classList.add('active');
-          }, 600);
-          
+          }, 600); 
           return;
         }
 
         entry.target.classList.remove('active');
       });
-    });
+    }, { threshold: 1.0 }); 
 
     const squares = document.querySelectorAll('.interactive');
 
