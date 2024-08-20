@@ -303,12 +303,11 @@ header > img {
   transition: 
     transform .3s ease-out,
     box-shadow .3s ease-out;
-  margin-bottom: 48px;
 }
 
 .card:first-child {
   transform: 
-    translate(128px, 2px)
+    translate(-32px, 4px)
     rotate(-6deg);
   z-index: 10;
   position: absolute;
@@ -323,7 +322,7 @@ header > img {
 
 .card:last-child {
   transform: 
-    translate(-128px, 2px) 
+    translate(32px, 4px) 
     rotate(6deg);
   z-index: 30;
   position: absolute;
@@ -353,6 +352,9 @@ header > img {
     rotate(12deg);
 } 
 
+#multimodal .stack {padding-bottom: 24px;}
+#multimodal .stack .card:first-child   {top: -16px}
+#multimodal .stack .card:last-child    {top: 16px}
 
 @media (max-width: 840px) {
   /* stack responsive code */
@@ -363,24 +365,17 @@ header > img {
   }
 
   .stack > .card:first-child {
-    transform: 
-      translate(0px, 128px) 
-      rotate(-6deg)
-      scale(1);
+    
   } 
 
    .stack > .card:nth-child(2) {
     transform: 
-      translate(0px, 0px) 
-      rotate(0deg)
-      scale(1);
+      
   } 
 
    .stack > .card:last-child {
     transform: 
-      translate(0px, -128px) 
-      rotate(6deg)
-      scale(1);
+      
   } 
 
  /* .stack.active > .card:first-child {
@@ -433,7 +428,6 @@ header > img {
 .input-container {
   width: 345px;
   height: 134px;
-  margin-bottom: 40px;
   display:flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -530,5 +524,11 @@ header > img {
 }
 
 
+/* temporary for testing purposes */
+
+
+.input-container, .stack {
+  border: 1px solid red;
+}
 
 
