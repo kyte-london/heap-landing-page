@@ -6,7 +6,7 @@ body {
   font-style: normal;
   line-height: normal;
   color: #191B1E;
-  font-weight: 500;
+  font-weight: 400;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,7 +21,7 @@ h1  {
 h2 {
   color: #777F89;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 400;
   margin: 0;
 }
 
