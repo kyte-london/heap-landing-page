@@ -139,7 +139,7 @@ header > .copy-container {max-width: 620px;}
 
 header, section, footer {
   display: flex;
-  padding: 88px 32px;
+  padding: 128px 32px;
   flex-direction: column;
   align-items: center;
   align-self: stretch;
@@ -336,7 +336,7 @@ header > img {
 
  .stack.active > .card:first-child {
   transform: 
-    translate(32px, 0px) 
+    translate(-128px, 0px) 
     rotate(-12deg);
 } 
 
@@ -348,60 +348,13 @@ header > img {
 
  .stack.active > .card:last-child {
   transform: 
-    translate(-32px, 0px) 
+    translate(128px, 0px) 
     rotate(12deg);
 } 
 
 #multimodal .stack {padding-bottom: 24px;}
 #multimodal .stack .card:first-child   {top: -16px}
 #multimodal .stack .card:last-child    {top: 16px}
-
-@media (max-width: 840px) {
-  /* stack responsive code */
-
-  .stack {
-    flex-direction: column;
-
-  }
-
-  .stack > .card:first-child {
-    
-  } 
-
-   .stack > .card:nth-child(2) {
-    transform: 
-      
-  } 
-
-   .stack > .card:last-child {
-    transform: 
-      
-  } 
-
- /* .stack.active > .card:first-child {
-    transform: 
-      translate(0px, 0px) 
-      rotate(-12deg)
-      scale(0.6);
-  } 
-
-   .stack.active > .card:nth-child(2) {
-    transform: 
-      translate(0px, 0px) 
-      rotate(0deg)
-      scale(0.6);
-  } 
-
-   .stack.active > .card:last-child {
-    transform: 
-      translate(0px, 0px) 
-      rotate(12deg)
-      scale(0.6);
-  } 
-
-  */
-
-}
 
 .card.salesforce {background-image: url(../assets/features/card-salesforce.png);}
 .card.notion {background-image: url(../assets/features/card-notion.png);}
@@ -427,7 +380,7 @@ header > img {
 
 .input-container {
   width: 345px;
-  height: 134px;
+  height: 104px;
   display:flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -523,12 +476,41 @@ header > img {
     0px 14px 64px -4px rgba(24, 39, 75, 0.12);
 }
 
+/* media queries */
 
-/* temporary for testing purposes */
+@media (max-width: 620px) {
 
+  .stack {
+    flex-direction: column;
+  }
 
-.input-container, .stack {
-  border: 1px solid red;
+  #integrations > .stack {
+    padding: 16px;
+  }
+
+  .stack.active > .card:first-child {
+    transform: 
+      translate(-32px, -64px) 
+      rotate(-12deg)
+      scale(0.6);
+  } 
+
+   .stack.active > .card:nth-child(2) {
+    transform: 
+      translate(0px, 0px) 
+      rotate(0deg)
+      scale(0.6);
+  } 
+
+   .stack.active > .card:last-child {
+    transform: 
+      translate(32px, 64px) 
+      rotate(12deg)
+      scale(0.6);
+  } 
+
+  .input-container {
+    transform: scale(0.8);
+  }
 }
-
 
