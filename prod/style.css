@@ -29,7 +29,7 @@ h3 {
   font-size: 40px;
   font-weight: 900;
   margin: 0;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.5cpx;
 }
 
 h4 {
@@ -476,6 +476,36 @@ header > img {
     0px 14px 64px -4px rgba(24, 39, 75, 0.12);
 }
 
+.animation-controls {
+  display: flex;
+justify-content: center;
+align-items: flex-start;
+gap: 32px;
+}
+
+.animation-controls > div {
+  font-weight: 400;
+  color: #777F89;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px;
+
+}
+
+.animation-controls > div > .icon {
+  width: 16px;
+  height: 16px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon.replay {background-image: url("../assets/hero/replay.svg");}
+.icon.pause {background-image: url("../assets/hero/pause.svg");}
+.icon.play {background-image: url("../assets/hero/play.svg");}
+
 /* media queries */
 
 @media (max-width: 620px) {
@@ -513,4 +543,5 @@ header > img {
     transform: scale(0.8);
   }
 }
+
 
