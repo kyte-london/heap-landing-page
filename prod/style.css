@@ -1,4 +1,3 @@
-
 body {
   text-align: center;
   background: #F9FAFB;
@@ -262,26 +261,25 @@ footer > .footer-container > .icon {
   background-position: center center;
 }
 
-.icon.plug {background-image: url(../assets/icons/plug.svg);}
-.icon.tag--group {background-image: url(../assets/icons/tag--group.svg);}
-.icon.locked {background-image: url(../assets/icons/locked.svg);}
-.icon.notification {background-image: url(../assets/icons/notification.svg);}
-.icon.user--follow {background-image: url(../assets/icons/user--follow.svg);}
-.icon.cursor--alt {background-image: url(../assets/icons/cursor--alt.svg);}
-.icon.chart--line {background-image: url(../assets/icons/chart--line.svg);}
-.icon.add {background-image: url(../assets/icons/add.svg);}
-.icon.rule {background-image: url(../assets/icons/rule.svg);}
-.icon.wifi--off {background-image: url(../assets/icons/wifi--off.svg);}
-.icon.idea {background-image: url(../assets/icons/idea.svg);}
-.icon.footer {background-image: url(../assets/logo-sm.svg);}
+.icon.plug          {background-image: url(../assets/icons/plug.svg);}
+.icon.tag--group    {background-image: url(../assets/icons/tag--group.svg);}
+.icon.locked        {background-image: url(../assets/icons/locked.svg);}
+.icon.notification  {background-image: url(../assets/icons/notification.svg);}
+.icon.user--follow  {background-image: url(../assets/icons/user--follow.svg);}
+.icon.cursor--alt   {background-image: url(../assets/icons/cursor--alt.svg);}
+.icon.chart--line   {background-image: url(../assets/icons/chart--line.svg);}
+.icon.add           {background-image: url(../assets/icons/add.svg);}
+.icon.rule          {background-image: url(../assets/icons/rule.svg);}
+.icon.wifi--off     {background-image: url(../assets/icons/wifi--off.svg);}
+.icon.idea          {background-image: url(../assets/icons/idea.svg);}
+.icon.footer        {background-image: url(../assets/logo-sm.svg);}
 
 header > img {
   max-width: 420px;
   width: 100%;
 }
 
-
-/* card stack */
+/* card stacks */
 
 .stack {
   display: inline-flex;
@@ -356,9 +354,9 @@ header > img {
 #multimodal .stack .card:first-child   {top: -16px}
 #multimodal .stack .card:last-child    {top: 16px}
 
-.card.salesforce {background-image: url(../assets/features/card-salesforce.png);}
-.card.notion {background-image: url(../assets/features/card-notion.png);}
-.card.csv {background-image: url(../assets/features/card-csv.png);}
+.card.salesforce  {background-image: url(../assets/features/card-salesforce.png);}
+.card.notion      {background-image: url(../assets/features/card-notion.png);}
+.card.csv         {background-image: url(../assets/features/card-csv.png);}
 
 .card.photo {
   background-image: url(../assets/features/card-photo.png);
@@ -376,7 +374,7 @@ header > img {
   height: 90px;
 }
 
-/* entry widget */
+/* input entry ui */
 
 .input-container {
   width: 345px;
@@ -476,6 +474,14 @@ header > img {
     0px 14px 64px -4px rgba(24, 39, 75, 0.12);
 }
 
+/* lottie container and animation controls */
+
+#lottie {
+  width: 360px;
+  height: 320px;
+  margin-bottom: -32px;
+}
+
 .animation-controls {
   display: flex;
 justify-content: center;
@@ -487,11 +493,17 @@ gap: 32px;
   font-weight: 400;
   color: #777F89;
   font-size: 14px;
-  display: flex;
+  display: none;
   align-items: center;
   gap: 4px;
   padding: 8px;
-
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .animation-controls > div > .icon {
@@ -502,9 +514,9 @@ gap: 32px;
   background-size: contain;
 }
 
-.icon.replay {background-image: url("../assets/hero/replay.svg");}
-.icon.pause {background-image: url("../assets/hero/pause.svg");}
-.icon.play {background-image: url("../assets/hero/play.svg");}
+.replay > .icon {background-image: url("../assets/hero/replay.svg");}
+.pause > .icon  {background-image: url("../assets/hero/pause.svg");}
+.play > .icon   {background-image: url("../assets/hero/play.svg");}
 
 /* media queries */
 
@@ -543,5 +555,3 @@ gap: 32px;
     transform: scale(0.8);
   }
 }
-
-

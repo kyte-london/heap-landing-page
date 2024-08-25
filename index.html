@@ -29,6 +29,9 @@
   <meta name="msapplication-navbutton-color" content="#F9FAFB">
   <meta name="apple-mobile-web-app-status-bar-style" content="#F9FAFB">
 
+  <!-- lottie plugin --> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
+
 	<title>Heap — The smart way to collect leads on the go</title>
 
 </head>
@@ -39,7 +42,7 @@
       <div class="logo-container">
 
         <div class="icon-container">
-          <div class="logo">&nbsp;</div>
+          <div class="logo"></div>
         </div>
 
         <h3>Heap</h3>
@@ -47,13 +50,12 @@
       </div>
     </nav>
 
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <lottie-player src="assets/hero.json" background="transparent" speed="1" style="width: 360px; height: 320px" direction="1" mode="normal" loop autoplay></lottie-player>
+    <div id="lottie"></div>
 
     <div class="animation-controls">
-      <!--div>Pause <div class="icon pause">&nbsp;</div></div-->
-      <div>Replay <div class="icon replay">&nbsp;</div></div>
-      <!--div>Play <div class="icon play">&nbsp;</div></div-->
+      <div class="pause">Pause <div class="icon"></div></div>
+      <div class="replay">Replay <div class="icon"></div></div>
+      <div class="play">Play <div class="icon"></div></div>
     </div>
 
     <div class="copy-container">
@@ -73,12 +75,13 @@
   <section id="multimodal">
     
     <div class="stack interactive">
-      <div class="card photo">&nbsp;</div>
-      <div class="card text">&nbsp;</div>
-      <div class="card audio">&nbsp;</div>
+      <div class="card photo"></div>
+      <div class="card text"></div>
+      <div class="card audio"></div>
     </div>
 
     <div class="copy-container">
+
       <h4>The right input for the right context</h4>
       <p>We know no day is ever the same, so we built Heap to fit any scenario and take any type of input.</p>
       
@@ -92,8 +95,8 @@
     <div class="input-container interactive">
 
       <div class="input">
-        <div class="toggle spark">&nbsp;</div>
-        <div class="toggle close">&nbsp;</div>
+        <div class="toggle spark"></div>
+        <div class="toggle close"></div>
         <img class="selection" src="assets/input/selection.png" alt="">
         <img src="assets/input/input.png" alt="">
 
@@ -107,14 +110,15 @@
       <p>Let the conversation flow naturally and collect details in whatever order you want.</p>
 
     </div>
+
   </section>
 
   <section id="integrations">
     
     <div class="stack interactive">
-      <div class="card salesforce">&nbsp;</div>
-      <div class="card notion">&nbsp;</div>
-      <div class="card csv">&nbsp;</div>
+      <div class="card salesforce"></div>
+      <div class="card notion"></div>
+      <div class="card csv"></div>
     </div>
 
     <div class="copy-container">
@@ -123,6 +127,7 @@
       <p>With our upcoming direct integrations, you’ll be able to send leads directly to your platforms of choice.</p>
 
     </div>
+
   </section>
 
   <section id="features">
@@ -153,6 +158,7 @@
   </section>
 
   <section id="roadmap">
+
     <div class="copy-container">
       <h4>The roadmap</h4>
       <p class="caption">Here’s a look at some of the features coming soon:</p>
@@ -200,9 +206,11 @@
       </li>
 
     </ul>
+
   </section>
 
   <footer>
+
     <div class="footer-container">
       
       Heap © 2024
@@ -212,12 +220,14 @@
       Designed and built in London
     
     </div>
+
   </footer>
 
-  <div class="rainbow">&nbsp;</div>
+  <div class="rainbow"></div>
 
   <script>
 
+    // animation on enter viewport
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.intersectionRatio === 1) { 
@@ -234,6 +244,42 @@
     const squares = document.querySelectorAll('.interactive');
 
     squares.forEach((element) => observer.observe(element));
+
+    // lottie animation
+    var animation = lottie.loadAnimation({
+      container: document.getElementById('lottie'), 
+      renderer: 'svg',
+      loop: false,
+      autoplay: true,
+      path: 'assets/hero.json' 
+    });
+
+    document.querySelector('.animation-controls > .pause').style.display = 'flex';
+
+    document.querySelector('.animation-controls > .play').addEventListener('click', function() {
+      animation.play();
+      toggleControls('pause');
+    });
+
+    document.querySelector('.animation-controls > .pause').addEventListener('click', function() {
+      animation.pause();
+      toggleControls('play');
+    });
+
+    document.querySelector('.animation-controls > .replay').addEventListener('click', function() {
+      animation.goToAndPlay(0, true); 
+      toggleControls('pause');
+    });
+
+    animation.addEventListener('complete', function() {
+      toggleControls('replay');
+    });
+
+    function toggleControls(show) {
+      document.querySelector('.animation-controls > .play').style.display = (show === 'play') ? 'flex' : 'none';
+      document.querySelector('.animation-controls > .pause').style.display = (show === 'pause') ? 'flex' : 'none';
+      document.querySelector('.animation-controls > .replay').style.display = (show === 'replay') ? 'flex' : 'none';
+    }
 
   </script>
 </body>
