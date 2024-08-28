@@ -29,28 +29,35 @@
   <meta name="msapplication-navbutton-color" content="#F9FAFB">
   <meta name="apple-mobile-web-app-status-bar-style" content="#F9FAFB">
 
-  <!-- lottie plugin --> 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
-
 	<title>Heap — The smart way to collect leads on the go</title>
 
 </head>
 <body>
 
-	<header>
-    <nav>
-      <div class="logo-container">
+  <nav>
+    <div class="logo-container">
 
-        <div class="icon-container">
-          <div class="logo"></div>
-        </div>
-
-        <h3>Heap</h3>
-
+      <div class="icon-container">
+        <div class="logo"></div>
       </div>
-    </nav>
 
-    <div id="lottie"></div>
+      <h3>Heap</h3>
+
+    </div>
+
+    <div class="button">Join the waiting list</div>
+  </nav>
+
+	<header>
+    <div class="video-container">
+      <video class="hero video" autoplay muted poster="">
+          <source type="video/mp4" src="assets/video/input-text-demo.mp4">
+          Sorry, your browser does not support this video.
+      </video>
+
+      <div class="phone-mask"></div>
+    </div>
+
 
     <div class="animation-controls">
       <div class="pause">Pause <div class="icon"></div></div>
@@ -61,12 +68,10 @@
     <div class="copy-container">
       <h1>The smart way to collect leads on the go</h1>
 
-      <h2>Say goodbye to clunky forms. Heap uses interpretative AI to let you collect leads with just a quick voice note or a snap of a business card.</h2>
+      <h2>No more to clunky forms: collect leads with a voice recording, a snap of a business card, or a text message.</h2>
     </div>
 
     <div class="cta-container">
-      <div class="button">Join the waiting list</div>
-
       <p class="caption">Heap will be available soon. <br>Join the waiting list to be notified and get early access.</p>
     </div>
 
@@ -244,42 +249,6 @@
     const squares = document.querySelectorAll('.interactive');
 
     squares.forEach((element) => observer.observe(element));
-
-    // lottie animation
-    var animation = lottie.loadAnimation({
-      container: document.getElementById('lottie'), 
-      renderer: 'svg',
-      loop: false,
-      autoplay: true,
-      path: 'assets/hero.json' 
-    });
-
-    document.querySelector('.animation-controls > .pause').style.display = 'flex';
-
-    document.querySelector('.animation-controls > .play').addEventListener('click', function() {
-      animation.play();
-      toggleControls('pause');
-    });
-
-    document.querySelector('.animation-controls > .pause').addEventListener('click', function() {
-      animation.pause();
-      toggleControls('play');
-    });
-
-    document.querySelector('.animation-controls > .replay').addEventListener('click', function() {
-      animation.goToAndPlay(0, true); 
-      toggleControls('pause');
-    });
-
-    animation.addEventListener('complete', function() {
-      toggleControls('replay');
-    });
-
-    function toggleControls(show) {
-      document.querySelector('.animation-controls > .play').style.display = (show === 'play') ? 'flex' : 'none';
-      document.querySelector('.animation-controls > .pause').style.display = (show === 'pause') ? 'flex' : 'none';
-      document.querySelector('.animation-controls > .replay').style.display = (show === 'replay') ? 'flex' : 'none';
-    }
 
   </script>
 </body>

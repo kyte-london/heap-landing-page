@@ -25,7 +25,7 @@ h2 {
 }
 
 h3 {
-  font-size: 40px;
+  font-size: 24px;
   font-weight: 900;
   margin: 0;
   letter-spacing: -0.5cpx;
@@ -57,6 +57,45 @@ p.caption {
   margin: 0;
 }
 
+/* nav */
+
+nav {
+  display: flex;
+width: 100%;
+padding: 32px 40px;
+justify-content: space-between;
+align-items: center;
+box-sizing: border-box;
+border-bottom: 1px solid #E7EBF1;
+background: rgba(255, 255, 255, 0.60);
+box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.11);
+backdrop-filter: blur(22px);
+position: fixed;
+z-index: 30;
+
+}
+
+.video-container {
+  position: relative;
+  margin-top: -160px;
+}
+
+.hero.video {
+  width: 312px;
+  border-radius: 0 0 16px 16px;
+}
+
+.phone-mask {
+  position: absolute;
+  width: 348px;
+  height: 558px;
+  top: 0;
+  left: -18px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../assets/video/phone-mask.png");
+}
+
 /* header */
 
 header {
@@ -67,42 +106,33 @@ header > .copy-container {max-width: 620px;}
 
 .logo-container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 16px;
 }
 
 .icon-container {
-  width: 128px;
-  height: 128px;
+  width: 40px;
+  height: 40px;
   background-image: url(../assets/logo/icon-background.png);
-  background-size: 256px;
+  background-size: 80px;
   background-position: top center;
-  border-radius: 34px;
+  border-radius: 12px;
   position: relative;
-  box-shadow: 
-    0px 6px 8px -6px rgba(24, 39, 75, 0.12), 
-    0px 8px 16px -6px rgba(24, 39, 75, 0.08);
   transition: 
     transform .3s ease-out,
-    background-position .6s ease-out,
-    box-shadow .3s ease-out;
+    background-position .6s ease-out;
 }
 
 .icon-container:hover {
   transform: scale(1.04);
   background-position: bottom center;
-  box-shadow: 
-    0px 8px 22px -6px rgba(24, 39, 75, 0.12), 
-    0px 14px 64px -4px rgba(24, 39, 75, 0.12);
 }
 
 .icon-container > .logo {
-  width: 128px;
-  height: 128px;
+  width: 40px;
+  height: 40px;
   background-image: url(../assets/logo/icon-logo.png);
-  background-size: 128px;
+  background-size: 40px;
   background-position: top center;
   position: absolute;
   top: 0px;
@@ -125,13 +155,15 @@ header > .copy-container {max-width: 620px;}
 
 .button {
   display: flex;
-  padding: 16px 24px;
+  padding: 8px 14px;
   justify-content: center;
   align-items: center;
-  gap: 16px;
-  border-radius: 16px;
+  gap: 8px;
+  border-radius: 8px;
   background: #191B1E;
   color: white;
+  font-size: 14px;
+
 }
 
 /* sections */
@@ -476,24 +508,18 @@ header > img {
 
 /* lottie container and animation controls */
 
-#lottie {
-  width: 360px;
-  height: 320px;
-  margin-bottom: -32px;
-}
-
 .animation-controls {
   display: flex;
-justify-content: center;
-align-items: flex-start;
-gap: 32px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 32px;
 }
 
 .animation-controls > div {
   font-weight: 400;
   color: #777F89;
   font-size: 14px;
-  display: none;
+  display: flex;
   align-items: center;
   gap: 4px;
   padding: 8px;
