@@ -61,20 +61,18 @@ p.caption {
 
 nav {
   display: flex;
-width: 100%;
-padding: 32px 40px;
-justify-content: space-between;
-align-items: center;
-box-sizing: border-box;
-border-bottom: 1px solid #E7EBF1;
-background: rgba(255, 255, 255, 0.60);
-box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.11);
-backdrop-filter: blur(22px);
--webkit-backdrop-filter: blur(22px);
-
-position: fixed;
-z-index: 30;
-
+  width: 100%;
+  padding: 24px 32px;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  border-bottom: 1px solid #E7EBF1;
+  background: linear-gradient(180deg, #F9FAFB 0%, rgba(249, 250, 251, 0.50) 100%);
+  box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.11);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  position: fixed;
+  z-index: 30;
 }
 
 .video-container {
@@ -98,14 +96,6 @@ z-index: 30;
   background-image: url("../assets/video/phone-mask.png");
 }
 
-/* header */
-
-header {
-  gap: 32px;
-}
-
-header > .copy-container {max-width: 620px;}
-
 .logo-container {
   display: flex;
   align-items: center;
@@ -125,7 +115,7 @@ header > .copy-container {max-width: 620px;}
     background-position .6s ease-out;
 }
 
-.icon-container:hover {
+.logo-container:hover .icon-container {
   transform: scale(1.04);
   background-position: bottom center;
 }
@@ -142,11 +132,19 @@ header > .copy-container {max-width: 620px;}
   transition: transform .8s ease-out;
 }
 
-.icon-container:hover > .logo {
+.logo-container:hover .logo {
   transform: 
    rotate(60deg)
    scale(1.05);
 }
+
+/* header */
+
+header {
+  gap: 32px;
+}
+
+header > .copy-container {max-width: 620px;}
 
 .cta-container {
   display: flex;
@@ -360,25 +358,25 @@ header > img {
   position: absolute;
 }
 
- .stack.active > .card {
+ section.active > .stack > .card {
   box-shadow: 
     0px 8px 22px -6px rgba(24, 39, 75, 0.12), 
     0px 14px 64px -4px rgba(24, 39, 75, 0.12);
 }
 
- .stack.active > .card:first-child {
+ section.active > .stack > .card:first-child {
   transform: 
     translate(-128px, 0px) 
     rotate(-12deg);
 } 
 
- .stack.active > .card:nth-child(2) {
+ section.active > .stack > .card:nth-child(2) {
   transform: 
     translate(0px, -16px) 
     rotate(0deg);
 } 
 
- .stack.active > .card:last-child {
+ section.active > .stack > .card:last-child {
   transform: 
     translate(128px, 0px) 
     rotate(12deg);
@@ -483,45 +481,45 @@ header > img {
   transform: rotate(-60deg);
 }
 
-.input-container.active > .input > .toggle.spark {
+#conversation.active .input-container > .input > .toggle.spark {
   opacity: 0;
   transform: rotate(60deg);
 }
 
-.input-container.active > .input > .toggle.close {
+#conversation.active .input-container > .input > .toggle.close {
   opacity: 1;
   transform: rotate(0deg);
 }
 
-.input-container.active > .input {
+#conversation.active .input-container > .input {
   padding-top: 38px;
 }
 
-.input-container.active > .input > img.selection {
+#conversation.active .input-container > .input > img.selection {
   opacity: 1;
 }
 
-.input-container.active > .input {
+#conversation.active .input-container > .input {
   transform: scale(1.04);
   box-shadow: 
     0px 8px 22px -6px rgba(24, 39, 75, 0.12), 
     0px 14px 64px -4px rgba(24, 39, 75, 0.12);
 }
 
-/* lottie container and animation controls */
+/* video controls */
 
-.animation-controls {
+.video-controls {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   gap: 32px;
 }
 
-.animation-controls > div {
+.video-controls > div {
   font-weight: 400;
   color: #777F89;
   font-size: 14px;
-  display: flex;
+  display: none;
   align-items: center;
   gap: 4px;
   padding: 8px;
@@ -534,7 +532,7 @@ header > img {
   user-select: none;
 }
 
-.animation-controls > div > .icon {
+.video-controls > div > .icon {
   width: 16px;
   height: 16px;
   background-position: center center;
@@ -558,21 +556,21 @@ header > img {
     padding: 16px;
   }
 
-  .stack.active > .card:first-child {
+  section.active > .stack > .card:first-child {
     transform: 
       translate(-32px, -64px) 
       rotate(-12deg)
       scale(0.6);
   } 
 
-   .stack.active > .card:nth-child(2) {
+   section.active > .stack > .card:nth-child(2) {
     transform: 
       translate(0px, 0px) 
       rotate(0deg)
       scale(0.6);
   } 
 
-   .stack.active > .card:last-child {
+   section.active > .stack > .card:last-child {
     transform: 
       translate(32px, 64px) 
       rotate(12deg)

@@ -45,12 +45,12 @@
 
     </div>
 
-    <div class="button">Join the waiting list</div>
+    <div class="button">Join waiting list</div>
   </nav>
 
 	<header>
     <div class="video-container">
-      <video class="hero video" autoplay muted poster="">
+      <video id="myVideo" class="hero video" autoplay muted playsinline poster="">
           <source type="video/mp4" src="assets/video/input-text-demo.mp4">
           Sorry, your browser does not support this video.
       </video>
@@ -59,10 +59,12 @@
     </div>
 
 
-    <div class="animation-controls">
-      <div class="pause">Pause <div class="icon"></div></div>
-      <div class="replay">Replay <div class="icon"></div></div>
-      <div class="play">Play <div class="icon"></div></div>
+    <div class="video-controls">
+      <div id="pauseControl" class="pause">Pause <div class="icon"></div></div>
+      
+      <div id="playControl" class="play">Play <div class="icon"></div></div>
+
+      <div id="replayControl" class="replay">Replay <div class="icon"></div></div>
     </div>
 
     <div class="copy-container">
@@ -77,9 +79,9 @@
 
   </header>
 
-  <section id="multimodal">
+  <section id="multimodal" class="interactive">
     
-    <div class="stack interactive">
+    <div class="stack">
       <div class="card photo"></div>
       <div class="card text"></div>
       <div class="card audio"></div>
@@ -95,9 +97,9 @@
     </div>
   </section>
 
-  <section id="conversation">
+  <section id="conversation" class="interactive">
 
-    <div class="input-container interactive">
+    <div class="input-container">
 
       <div class="input">
         <div class="toggle spark"></div>
@@ -118,9 +120,9 @@
 
   </section>
 
-  <section id="integrations">
+  <section id="integrations" class="interactive">
     
-    <div class="stack interactive">
+    <div class="stack">
       <div class="card salesforce"></div>
       <div class="card notion"></div>
       <div class="card csv"></div>
@@ -249,6 +251,53 @@
     const squares = document.querySelectorAll('.interactive');
 
     squares.forEach((element) => observer.observe(element));
+
+
+    // video playback controls
+    document.addEventListener("DOMContentLoaded", function () {
+      const video = document.getElementById("myVideo");
+      const pauseControl = document.getElementById("pauseControl");
+      const playControl = document.getElementById("playControl");
+      const replayControl = document.getElementById("replayControl");
+
+      function updateControls() {
+        if (video.paused) {
+          playControl.style.display = "flex";
+          pauseControl.style.display = "none";
+          replayControl.style.display = "none";
+        } else {
+          playControl.style.display = "none";
+          pauseControl.style.display = "flex";
+          replayControl.style.display = "none";
+        }
+      }
+
+      video.addEventListener("play", updateControls);
+
+      video.addEventListener("pause", updateControls);
+
+      video.addEventListener("ended", function () {
+        replayControl.style.display = "flex";
+        playControl.style.display = "none";
+        pauseControl.style.display = "none";
+      });
+
+      pauseControl.addEventListener("click", function () {
+        video.pause();
+      });
+
+      playControl.addEventListener("click", function () {
+        video.play();
+      });
+
+      replayControl.addEventListener("click", function () {
+        video.currentTime = 0;
+        video.play();
+      });
+
+      updateControls();
+    });
+
 
   </script>
 </body>
