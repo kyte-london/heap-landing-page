@@ -155,6 +155,7 @@ input {
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url("../assets/video/phone-mask.png");
+  pointer-events: none;
 }
 
 .logo-container {
@@ -599,6 +600,7 @@ header > img {
   background: none;
   border: none;
   transition: transform .2s ease;
+  font-family: new-hero, "New Hero", sans-serif;
 }
 
 .video-controls > button:hover {
