@@ -83,12 +83,36 @@ nav {
 }
 
 
-nav > .button {
+.button {
   padding: 0 14px;
   height: 40px;
   font-size: 14px;
   border-radius: 8px;
   text-decoration: none;
+  background: #191B1E;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  transition: 
+    transform .1s ease-out;
+  font-family: new-hero, "New Hero", sans-serif;
+}
+
+.button:hover {
+  transform: scale(1.05);
+}
+
+input {
+  border: none;
+  font-family: new-hero, "New Hero", sans-serif;
+  font-size: 14px;
+  padding: 0 14px;
+  height: 40px;
+  border-radius: 8px;
+  min-width: 256px;
 }
 
 @media (max-width: 620px) {
@@ -97,8 +121,15 @@ nav > .button {
     padding: 16px;
     width: calc(100% - 16px);
   }
+
+  form {
+    flex-direction: column;
+  }
+
+  form > .button, form > input {width: 100%}
 }
 
+/* video */
 
 .video-container {
   position: relative;
@@ -164,6 +195,20 @@ nav:hover .logo-container .logo {
    scale(1.05);
 }
 
+/* form */
+
+form {
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 
+    0px 6px 8px -6px rgba(24, 39, 75, 0.12), 
+    0px 8px 16px -6px rgba(24, 39, 75, 0.08);
+  display: flex;
+  padding: 16px;
+  align-items: center;
+  gap: 8px;
+}
+
 /* header */
 
 header {
@@ -181,18 +226,7 @@ header > .copy-container > h2 > span.active {color: #5063E5}
   gap: 16px;
 }
 
-.button {
-  display: flex;
-  padding: 16px 24px;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  border-radius: 16px;
-  background: #191B1E;
-  color: white;
-  font-size: 16px;
 
-}
 
 /* sections */
 
