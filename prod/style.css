@@ -67,11 +67,10 @@ nav {
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  border-bottom: 1px solid #E7EBF1;
-  background-color: rgba(255, 255, 255, 0.80);
+  background-color: rgba(255, 255, 255, 0.90);
   box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.11);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   position: fixed;
   z-index: 30;
   margin: 16px;
@@ -91,7 +90,6 @@ nav > .button {
     margin: 8px;
     width: calc(100% - 16px);
   }
- 
 }
 
 
