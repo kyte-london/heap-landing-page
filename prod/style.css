@@ -29,6 +29,11 @@ h3 {
   font-weight: 900;
   margin: 0;
   letter-spacing: -0.5cpx;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 h4 {
@@ -62,7 +67,7 @@ p.caption {
 nav {
   display: flex;
   width: calc(100% - 32px);
-  max-width: 880px;
+  max-width: 1024px;
   padding: 24px;
   justify-content: space-between;
   align-items: center;
@@ -83,11 +88,13 @@ nav > .button {
   height: 40px;
   font-size: 14px;
   border-radius: 8px;
+  text-decoration: none;
 }
 
 @media (max-width: 620px) {
   nav {
     margin: 8px;
+    padding: 16px;
     width: calc(100% - 16px);
   }
 }
