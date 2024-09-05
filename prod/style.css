@@ -102,7 +102,7 @@ nav {
 }
 
 .button:hover {
-  transform: scale(1.05);
+  transform: scale(1.025);
 }
 
 input {
@@ -577,7 +577,7 @@ header > img {
   gap: 32px;
 }
 
-.video-controls > div {
+.video-controls > button {
   font-weight: 400;
   color: #777F89;
   font-size: 14px;
@@ -592,9 +592,11 @@ header > img {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  background: none;
+  border: none;
 }
 
-.video-controls > div > .icon {
+.video-controls > button > .icon {
   width: 16px;
   height: 16px;
   background-position: center center;
