@@ -61,20 +61,39 @@ p.caption {
 
 nav {
   display: flex;
-  width: 100%;
-  padding: 24px 32px;
+  width: calc(100% - 32px);
+  max-width: 880px;
+  padding: 24px;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
   border-bottom: 1px solid #E7EBF1;
-  /*background: linear-gradient(180deg, #F9FAFB 0%, rgba(249, 250, 251, 0.50) 100%);*/
-  background-color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.80);
   box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.11);
-  /*backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);*/
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   position: fixed;
   z-index: 30;
+  margin: 16px;
+  border-radius: 24px;
 }
+
+
+nav > .button {
+  padding: 0 14px;
+  height: 40px;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+@media (max-width: 620px) {
+  nav {
+    margin: 8px;
+    width: calc(100% - 16px);
+  }
+ 
+}
+
 
 .video-container {
   position: relative;
@@ -83,6 +102,7 @@ nav {
 
 .hero.video {
   width: 312px;
+  height: 540px;
   border-radius: 0 0 16px 16px;
 }
 
@@ -109,14 +129,14 @@ nav {
   background-image: url(../assets/logo/icon-background.png);
   background-size: 80px;
   background-position: top center;
-  border-radius: 12px;
+  border-radius: 8px;
   position: relative;
   transition: 
     transform .3s ease-out,
     background-position .6s ease-out;
 }
 
-.logo-container:hover .icon-container {
+nav:hover .logo-container .icon-container {
   transform: scale(1.04);
   background-position: bottom center;
 }
@@ -133,7 +153,7 @@ nav {
   transition: transform .8s ease-out;
 }
 
-.logo-container:hover .logo {
+nav:hover .logo-container .logo {
   transform: 
    rotate(60deg)
    scale(1.05);
@@ -167,12 +187,6 @@ header > .copy-container > h2 > span.active {color: #5063E5}
   color: white;
   font-size: 16px;
 
-}
-
-nav > .button {
-  padding: 8px 14px;
-  font-size: 14px;
-  border-radius: 8px;
 }
 
 /* sections */
