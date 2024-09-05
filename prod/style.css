@@ -105,6 +105,10 @@ nav {
   transform: scale(1.025);
 }
 
+.button:active {
+  transform: scale(0.95);
+}
+
 input {
   border: none;
   font-family: new-hero, "New Hero", sans-serif;
@@ -594,6 +598,15 @@ header > img {
   user-select: none;
   background: none;
   border: none;
+  transition: transform .2s ease;
+}
+
+.video-controls > button:hover {
+  transform: scale(1.06);
+}
+
+.video-controls > button:active {
+  transform: scale(0.95);
 }
 
 .video-controls > button > .icon {
