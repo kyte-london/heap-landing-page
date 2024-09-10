@@ -94,7 +94,7 @@ nav {
   font-size: 14px;
   border-radius: 8px;
   text-decoration: none;
-  background: #191B1E;
+  
   color: white;
   display: flex;
   justify-content: center;
@@ -102,12 +102,24 @@ nav {
   border: none;
   cursor: pointer;
   transition: 
-    transform .1s ease-out;
+    transform .3s ease-out, 
+    background-position .75s cubic-bezier(0, 0.64, 0.46, 1.01);
   font-family: new-hero, "New Hero", sans-serif;
+  background: linear-gradient(90deg, 
+    #895F98 -1.29%, 
+    #4175FA 12.34%, 
+    #D7E9D5 30.35%, 
+    #BAF3E8 34.79%, 
+    #C1DAF6 38.95%, 
+    #C266FF 55.98%, 
+    #191B1E 74.4%);
+  background-size: 400%;
+  background-position: right;
 }
 
 .button:hover {
   transform: scale(1.025);
+  background-position: left;
 }
 
 .button:active {
