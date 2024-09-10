@@ -1,3 +1,8 @@
+*:focus {
+outline: 2px solid #4175FA7;
+  outline-offset: 2px;
+}
+
 body {
   text-align: center;
   background: #F9FAFB;
@@ -237,7 +242,7 @@ header > .copy-container > h2 > span.active {color: #5063E5}
 
 header, section, footer {
   display: flex;
-  padding: 128px 32px;
+  padding: 80px 32px;
   flex-direction: column;
   align-items: center;
   align-self: stretch;
@@ -601,6 +606,7 @@ header > img {
   border: none;
   transition: transform .2s ease;
   font-family: new-hero, "New Hero", sans-serif;
+  border-radius: 8px;
 }
 
 .video-controls > button:hover {
