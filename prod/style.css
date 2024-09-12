@@ -94,9 +94,8 @@ nav {
   font-size: 14px;
   border-radius: 8px;
   text-decoration: none;
-  
   color: white;
-  display: flex;
+  display: inline-block;
   justify-content: center;
   align-items: center;
   border: none;
@@ -114,6 +113,7 @@ nav {
     #C266FF 55.98%, 
     #191B1E 74.4%);
   background-size: 400%;
+  background-image: url(../assets/logo/icon-background.png);
   background-position: right;
 }
 
