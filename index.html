@@ -272,6 +272,7 @@
           playControl.style.display = "flex";
           pauseControl.style.display = "none";
           replayControl.style.display = "none";
+
         } else {
           playControl.style.display = "none";
           pauseControl.style.display = "flex";
@@ -280,7 +281,6 @@
       }
 
       video.addEventListener("play", updateControls);
-
       video.addEventListener("pause", updateControls);
 
       video.addEventListener("ended", function () {
