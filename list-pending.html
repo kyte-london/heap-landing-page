@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <meta http-equiv="refresh" content="10" />
+  <head>
+    <link rel="stylesheet" href="https://use.typekit.net/cpq7bld.css">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: new-hero, "New Hero", sans-serif;
+        box-sizing: border-box;
+        font-size: 16px;
+        background-color: #F9FAFB;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+        flex-shrink: 0;
+      }
+      p {
+        margin: 2px;
+      }
+
+      .copy {
+        text-align: center;
+      }
+      .title {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        color: #191B1E;
+      }
+      .subtitle {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        color: #777F89;
+      }
+      .subtitle > a {
+        color: #777F89;
+      }
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .icon-container {
+        width: 80px;
+        height: 80px;
+        background-image: url(assets/logo/icon-background.png);
+        background-size: 128px;
+        background-position: top center;
+        border-radius: 18px;
+        position: relative;
+        transition: 
+          transform .3s ease-out,
+          background-position .6s ease-out;
+      }
+
+      .logo-container:hover .icon-container {
+        transform: scale(1.04);
+        background-position: bottom center;
+      }
+
+      .icon-container > .logo {
+        width: 80px;
+        height: 80px;
+        background-image: url(assets/logo/icon-logo.png);
+        background-size: 80px;
+        background-position: top center;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        transition: transform .8s ease-out;
+      }
+
+      .logo-container:hover .logo {
+        transform: 
+         rotate(60deg)
+         scale(1.05);
+      }
+
+      .rainbow {
+        width: 100%;
+        height: 240px;
+        position: fixed;
+        bottom: 0;
+        background-image: url(assets/footer-rainbow.png);
+        background-position: bottom center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        z-index: 1;
+        opacity: .6;
+        pointer-events: none;
+      }
+
+      .button {
+        padding: 12px 16px;
+        font-size: 14px;
+        border-radius: 8px;
+        text-decoration: none;
+        color: white;
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        cursor: pointer;
+        transition: 
+          transform .1s cubic-bezier(0, 0.64, 0.46, 1.01), 
+          background-position 1s cubic-bezier(0, 0.64, 0.46, 1.01);
+        font-family: new-hero, "New Hero", sans-serif;
+        background: linear-gradient(90deg, 
+          #895F98 -1.29%, 
+          #4175FA 12.34%, 
+          #C4D6A9 30.35%, 
+          #94DCCE 34.79%, 
+          #9ABDE5 38.95%,
+          #C266FF 55.98%, 
+          #191B1E 74.4%);
+        background-size: 400%;
+        text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+        background-position: right;
+      }
+
+      .button:hover {
+        background-position: left;
+      }
+
+      .button:active {
+        transform: scale(0.96);
+      }
+    </style>
+
+    <title>Heap — Almost there!</title>
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="logo-container">
+
+        <div class="icon-container">
+          <div class="logo"></div>
+        </div>
+
+      </div>
+      <div class="copy">
+      <p class="title">Almost there...</p>
+      <p class="subtitle">We've sent you an email to confirm your subscription.</p>
+      </div>
+
+      <a href="/" class="button">Go back</a>
+    </div>
+
+    <div class="rainbow"></div>
+  </body>
+</html>
