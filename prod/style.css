@@ -151,7 +151,7 @@ input {
 
 .video-container {
   position: relative;
-  margin-top: -128px;
+  margin-top: -64px;
 }
 
 .hero.video {
