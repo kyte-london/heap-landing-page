@@ -45,7 +45,7 @@
 
     </div>
 
-    <a href="#form" class="button">Join waiting list</a>
+    <a href="#form" id="scroll-to-form" class="button">Join waiting list</a>
   </nav>
 
 	<header>
@@ -249,9 +249,7 @@
     }, { threshold: 1.0 }); 
 
     const squares = document.querySelectorAll('.interactive');
-
     squares.forEach((element) => observer.observe(element));
-
 
     // video playback controls
     document.addEventListener("DOMContentLoaded", function () {
@@ -298,35 +296,20 @@
       updateControls();
     });
 
-    // video highlight
-    /* document.addEventListener("DOMContentLoaded", function() {
-        const video = document.getElementById("myVideo");
-        const recording = document.querySelector(".recording");
-        const photo = document.querySelector(".photo");
-        const text = document.querySelector(".text");
+    // smooth scroll to form
+    document.getElementById('scroll-to-form').addEventListener('click', function(event) {
+        event.preventDefault();
+        const formElement = document.getElementById('form');
+        const headerOffset = 256;
+        const elementPosition = formElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - headerOffset;
 
-        video.addEventListener("timeupdate", function() {
-            const currentTime = video.currentTime;
-
-            recording.classList.remove("active");
-            photo.classList.remove("active");
-            text.classList.remove("active");
-
-            if (currentTime >= 0 && currentTime <= 5) {
-                recording.classList.add("active");
-            } else if (currentTime > 5 && currentTime <= 10) {
-                photo.classList.add("active");
-            } else if (currentTime > 10 && currentTime <= 15) {
-                text.classList.add("active");
-            }
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
         });
+    });
 
-        video.addEventListener("ended", function() {
-            recording.classList.remove("active");
-            photo.classList.remove("active");
-            text.classList.remove("active");
-        });
-    });*/ 
 
 
   </script>
