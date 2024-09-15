@@ -250,11 +250,12 @@ header > .copy-container > h2 > span.active {color: #5063E5}
 
 header, section, footer {
   display: flex;
-  padding: 80px 32px;
+  padding: 24px 32px;
   flex-direction: column;
   align-items: center;
   align-self: stretch;
   z-index: 20;
+  margin: 40px 0;
 }
 
 section {

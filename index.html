@@ -238,9 +238,7 @@
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.intersectionRatio === 1) { 
-          setTimeout(() => {
-            entry.target.classList.add('active');
-          }, 600); 
+          entry.target.classList.add('active');
           return;
         }
 
