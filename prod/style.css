@@ -571,6 +571,13 @@ header > img {
       scale(0.6);
   } 
 
+  section.active > .stack > .card.arrow {
+    transform: 
+      translate(0px, -5px) 
+      rotate(48deg)
+      scale(0.4);
+  }
+
    section.active > .stack > .card:last-child {
     transform: 
       translate(32px, 64px) 
