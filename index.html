@@ -220,13 +220,19 @@
 
     <div class="footer-container">
       
-      Heap © 2024
+      <div>© <span id="year">[oh crap something's broken — just pretend this reads the current year]</span> Heap</div>
 
       <div class="icon footer"></div>
   
-      Designed and built in London
+      <div>Designed and built in London</div>
     
     </div>
+
+    <p>
+      <a href="mailto:hello@getheap.app">Contact us</a> • 
+      <a target="_blank" href="https://www.linkedin.com/company/getheap.app/">LinkedIn</a> • 
+      <a target="_blank" href="https://www.instagram.com/getheap.app/">Instagram</a>
+    </p>
 
   </footer>
 
@@ -308,7 +314,8 @@
         });
     });
 
-
+    // current year on footer
+    document.getElementById("year").innerHTML = new Date().getFullYear();
 
   </script>
 </body>

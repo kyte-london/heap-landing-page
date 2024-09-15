@@ -364,6 +364,10 @@ footer > .footer-container {
   flex-wrap: wrap;
   border-radius: 56px;
   background: #191B1E;
+  margin-bottom: 24px;
+}
+
+footer > .footer-container {
   color: #E7EBF1;
   font-size: 12px;
 }
@@ -372,6 +376,13 @@ footer > .footer-container > .icon {
   width: 20px;
   height: 20px;
 }
+
+footer > p, footer > p > a {
+  color: #777F89;
+  font-size: 12px;
+  text-align: center;
+}
+
 
 /* images and icons */
 
