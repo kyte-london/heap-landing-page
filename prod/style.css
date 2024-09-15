@@ -398,13 +398,14 @@ header > img {
   width: 100%;
 }
 
-/* card stacks 
+/* card stacks */
 
 .stack {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   position: relative;
+  margin-bottom: 24px;
 }
 
 .card {
@@ -414,12 +415,15 @@ header > img {
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 16px;
-  box-shadow: 
-    0px 6px 8px -6px rgba(24, 39, 75, 0.12), 
-    0px 8px 16px -6px rgba(24, 39, 75, 0.08);
   transition: 
     transform .3s ease-out,
     box-shadow .3s ease-out;
+}
+
+.card.shadow {
+  box-shadow: 
+    0px 6px 8px -6px rgba(24, 39, 75, 0.12), 
+    0px 8px 16px -6px rgba(24, 39, 75, 0.08);
 }
 
 .card:first-child {
@@ -445,7 +449,7 @@ header > img {
   position: absolute;
 }
 
- section.active > .stack > .card {
+ section.active > .stack > .card.shadow {
   box-shadow: 
     0px 8px 22px -6px rgba(24, 39, 75, 0.12), 
     0px 14px 64px -4px rgba(24, 39, 75, 0.12);
@@ -469,129 +473,14 @@ header > img {
     rotate(12deg);
 } 
 
-#multimodal .stack {padding-bottom: 24px;}
-#multimodal .stack .card:first-child   {top: -16px}
-#multimodal .stack .card:last-child    {top: 16px}
-
 .card.salesforce  {background-image: url(../assets/features/card-salesforce.png);}
 .card.notion      {background-image: url(../assets/features/card-notion.png);}
 .card.csv         {background-image: url(../assets/features/card-csv.png);}
-
-.card.photo {
-  background-image: url(../assets/features/card-photo.png);
-  width: 192px;
-  height: 152.25px;
-}
-.card.text {
-  background-image: url(../assets/features/card-text.png);
-  width: 192px;
-  height: 116.5px;
-}
-.card.audio {
-  background-image: url(../assets/features/card-audio.png);
-  width: 192px;
-  height: 90px;
-} */
-
-/* input entry ui 
-
-.input-container {
-  width: 345px;
-  height: 104px;
-  display:flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-.input {
-  background-color: #ffffff;
-  box-shadow: 
-    0px 6px 8px -6px rgba(24, 39, 75, 0.12), 
-    0px 8px 16px -6px rgba(24, 39, 75, 0.08);
-  border-radius: 16px;
-  overflow: hidden;
-  position: relative;
-  padding-top: 0px;
-  transition: 
-    transform .2s ease-out,
-    box-shadow .2s ease-out,
-    padding-top .2s ease-out;
-  transform: scale(1.0);
-}
-
-.input > img {
-  display: block;
-  width: 100%;
-  z-index: 2;
-  user-drag: none;
-  -webkit-user-drag: none;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  position: relative;
-}
-
-.input > img.selection {
-  position: absolute;
-  top: 0;
-  opacity: 0;
-  transition: 
-    opacity .2s ease-out;
-  z-index: 1;
-}
-
-.input > .toggle {
-  width: 33px;
-  height: 33px;
-  position: absolute;
-  bottom: 15px;
-  left: 15px;
-  transition:
-    transform .2s ease-out,
-    opacity .2s ease-out;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  z-index: 3;
-}
-
-.input > .toggle.spark {
-  background-image: url(../assets/input/spark.png);
-  opacity: 1;
-  transform: rotate(0deg);
-}
-
-.input > .toggle.close {
-  background-image: url(../assets/input/close.png);
-  opacity: 0;
-  transform: rotate(-60deg);
-}
-
-#conversation.active .input-container > .input > .toggle.spark {
-  opacity: 0;
-  transform: rotate(60deg);
-}
-
-#conversation.active .input-container > .input > .toggle.close {
-  opacity: 1;
-  transform: rotate(0deg);
-}
-
-#conversation.active .input-container > .input {
-  padding-top: 38px;
-}
-
-#conversation.active .input-container > .input > img.selection {
-  opacity: 1;
-}
-
-#conversation.active .input-container > .input {
-  transform: scale(1.04);
-  box-shadow: 
-    0px 8px 22px -6px rgba(24, 39, 75, 0.12), 
-    0px 14px 64px -4px rgba(24, 39, 75, 0.12);
-} */
+.card.photo         {background-image: url(../assets/features/card-photo.png);}
+.card.text         {background-image: url(../assets/features/card-text.png);}
+.card.audio         {background-image: url(../assets/features/card-audio.png);}
+.card.lead         {background-image: url(../assets/features/card-lead.png);}
+.card.arrow         {background-image: url(../assets/features/card-arrow.png);}
 
 /* video controls */
 
