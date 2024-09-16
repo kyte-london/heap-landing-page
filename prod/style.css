@@ -342,12 +342,12 @@ section {
 
 .rainbow {
   width: 100%;
-  height: 240px;
+  height: 512px;
   position: fixed;
   bottom: 0;
   background-image: url(../assets/footer-rainbow.png);
   background-position: bottom center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
   opacity: .6;
