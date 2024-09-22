@@ -342,15 +342,22 @@ section {
 
 .rainbow {
   width: 100%;
-  height: 512px;
+  height: 800px;
   position: fixed;
-  bottom: 0;
-  background-image: url(../assets/footer-rainbow.png);
+  bottom: -400px;
+  background: radial-gradient(
+    100% 40% at 50% 50%, 
+    #F4ABEF 0%, 
+    #DBD0EB 35.5%, 
+    #BCF2E6 61%, 
+    #C9D5F9 79%, 
+    rgba(201, 213, 249, 0.00) 100%);
+  filter: blur(64px);
   background-position: bottom center;
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
-  opacity: .6;
+  opacity: .4;
   pointer-events: none;
 }
 
