@@ -13,6 +13,26 @@ const observer = new IntersectionObserver(entries => {
 const squares = document.querySelectorAll('.interactive');
 squares.forEach((element) => observer.observe(element));
 
+// hide waiting list button
+
+function checkVisibility() {
+  const form = document.getElementById('form');
+  const formLink = document.getElementById('scroll-to-form');
+
+  if (form.getBoundingClientRect().top >= 0 && form.getBoundingClientRect().bottom <= window.innerHeight) {
+    formLink.classList.add('hidden');
+  } else {
+    formLink.classList.remove('hidden');
+  }
+}
+
+// Initial check
+checkVisibility();
+
+// Add event listener for window resize and scroll
+window.addEventListener('resize', checkVisibility);
+window.addEventListener('scroll', checkVisibility);
+
 // video playback controls
 document.addEventListener("DOMContentLoaded", function () {
   const video = document.getElementById("myVideo");
