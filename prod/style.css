@@ -366,7 +366,18 @@ section {
   background-repeat: no-repeat;
   z-index: 1;
   opacity: .4;
+  transition:
+    opacity .4s ease-out,
+    height .4s ease-out,
+    bottom .4s ease-out;
   pointer-events: none;
+}
+
+.rainbow:hover {
+  opacity: 1;
+  height: 1200px;
+  bottom: -600px;
+  filter: blur(4px);
 }
 
 footer > .footer-container {
