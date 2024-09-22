@@ -398,6 +398,10 @@ footer > p, footer > p > a {
   text-align: center;
 }
 
+footer > p > a:hover {
+  color: #191B1E;
+}
+
 
 /* images and icons */
 
