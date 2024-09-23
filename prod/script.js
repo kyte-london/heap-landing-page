@@ -1,4 +1,4 @@
-// animation on enter viewport
+// stack animation on enter viewport
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.intersectionRatio === 1) { 
@@ -13,9 +13,8 @@ const observer = new IntersectionObserver(entries => {
 const squares = document.querySelectorAll('.interactive');
 squares.forEach((element) => observer.observe(element));
 
-// hide waiting list button
-
-function checkVisibility() {
+// hide waiting list button when form is in view
+function checkVisibilityOfForm() {
   const form = document.getElementById('form');
   const formLink = document.getElementById('scroll-to-form');
 
@@ -26,57 +25,48 @@ function checkVisibility() {
   }
 }
 
-// Initial check
-checkVisibility();
+checkVisibilityOfForm();
 
-// Add event listener for window resize and scroll
-window.addEventListener('resize', checkVisibility);
-window.addEventListener('scroll', checkVisibility);
+window.addEventListener('resize', checkVisibilityOfForm);
+window.addEventListener('scroll', checkVisibilityOfForm);
 
-// video playback controls
+// hero video controls
 document.addEventListener("DOMContentLoaded", function () {
   const video = document.getElementById("myVideo");
-  const pauseControl = document.getElementById("pauseControl");
-  const playControl = document.getElementById("playControl");
-  const replayControl = document.getElementById("replayControl");
+  const controlButton = document.getElementById("control");
 
-  function updateControls() {
-    if (video.paused) {
-      playControl.style.display = "flex";
-      pauseControl.style.display = "none";
-      replayControl.style.display = "none";
-
+  function updateButton() {
+    if (video.ended) {
+      controlButton.innerHTML = 'Replay <div class="icon"></div>';
+      controlButton.className = "replay";
+    } else if (video.paused) {
+      controlButton.innerHTML = 'Play <div class="icon"></div>';
+      controlButton.className = "play";
     } else {
-      playControl.style.display = "none";
-      pauseControl.style.display = "flex";
-      replayControl.style.display = "none";
+      controlButton.innerHTML = 'Pause <div class="icon"></div>';
+      controlButton.className = "pause";
     }
   }
 
-  video.addEventListener("play", updateControls);
-  video.addEventListener("pause", updateControls);
-
-  video.addEventListener("ended", function () {
-    replayControl.style.display = "flex";
-    playControl.style.display = "none";
-    pauseControl.style.display = "none";
+  controlButton.addEventListener("click", function () {
+    if (video.ended) {
+      video.currentTime = 0;
+      video.play();
+    } else if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
+    updateButton();
   });
 
-  pauseControl.addEventListener("click", function () {
-    video.pause();
-  });
+  video.addEventListener("play", updateButton);
+  video.addEventListener("pause", updateButton);
+  video.addEventListener("ended", updateButton);
 
-  playControl.addEventListener("click", function () {
-    video.play();
-  });
-
-  replayControl.addEventListener("click", function () {
-    video.currentTime = 0;
-    video.play();
-  });
-
-  updateControls();
+  updateButton();
 });
+
 
 // smooth scroll to form
 document.getElementById('scroll-to-form').addEventListener('click', function(event) {

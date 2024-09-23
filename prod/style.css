@@ -121,6 +121,7 @@ nav {
   opacity: 0;
   background-position: left;
   pointer-events: none;
+  visibility: hidden;
 }
 
 .button:hover {
@@ -537,7 +538,7 @@ header > img {
   font-weight: 400;
   color: #777F89;
   font-size: 14px;
-  display: none;
+  display: flex;
   align-items: center;
   gap: 4px;
   padding: 8px;
