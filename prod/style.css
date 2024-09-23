@@ -1,5 +1,5 @@
 *:focus {
-outline: 2px solid #4175FA7;
+  outline: 2px solid #4175FA;
   outline-offset: 2px;
 }
 
@@ -516,13 +516,13 @@ header > img {
     rotate(12deg);
 } 
 
-.card.salesforce  {background-image: url(../assets/features/card-salesforce.png);}
-.card.notion      {background-image: url(../assets/features/card-notion.png);}
-.card.csv         {background-image: url(../assets/features/card-csv.png);}
+.card.salesforce    {background-image: url(../assets/features/card-salesforce.png);}
+.card.notion        {background-image: url(../assets/features/card-notion.png);}
+.card.csv           {background-image: url(../assets/features/card-csv.png);}
 .card.photo         {background-image: url(../assets/features/card-photo.png);}
-.card.text         {background-image: url(../assets/features/card-text.png);}
+.card.text          {background-image: url(../assets/features/card-text.png);}
 .card.audio         {background-image: url(../assets/features/card-audio.png);}
-.card.lead         {background-image: url(../assets/features/card-lead.png);}
+.card.lead          {background-image: url(../assets/features/card-lead.png);}
 .card.arrow         {background-image: url(../assets/features/card-arrow.png);}
 
 /* video controls */
