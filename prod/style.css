@@ -537,6 +537,8 @@ header > img {
 .video-controls > button {
   font-weight: 400;
   color: #777F89;
+  width: 80px;
+  justify-content: center;
   font-size: 14px;
   display: flex;
   align-items: center;
