@@ -434,6 +434,8 @@ footer > p > a:hover {
 .icon.rule          {background-image: url(../assets/icons/rule.svg);}
 .icon.wifi--off     {background-image: url(../assets/icons/wifi--off.svg);}
 .icon.idea          {background-image: url(../assets/icons/favorite.svg);}
+.icon.logo--linkedin{background-image: url(../assets/icons/logo--linkedin.svg);}
+.icon.send          {background-image: url(../assets/icons/send.svg);}
 .icon.footer        {background-image: url(../assets/logo-sm.svg);}
 
 header > img {
