@@ -88,35 +88,3 @@ document.getElementById("year").innerHTML = new Date().getFullYear();
 
 
 
-
-
-// ripple effect ????
-
-document.querySelectorAll('.big-list li').forEach((li) => {
-  li.addEventListener('mouseenter', () => {
-    const textElement = li.querySelector('.ripple-text');
-    const text = textElement.textContent;
-    const centerIndex = Math.floor(text.length / 2); // Determine center of text
-
-    textElement.innerHTML = ''; // Clear existing text
-    text.split('').forEach((char, index) => {
-      const span = document.createElement('span');
-      span.textContent = char === ' ' ? '\u00A0' : char; // Replace spaces with non-breaking spaces
-      
-      // Calculate delay and scale factor based on distance from the center
-      const distance = Math.abs(index - centerIndex);
-      const delay = distance * 50;
-      const scaleFactor = 1 - (distance / centerIndex) * 0.5; // Scale from 1 to 0.5
-
-      span.style.animationDelay = `${delay}ms`;
-      span.style.setProperty('--scale-factor', scaleFactor);
-      span.classList.add('ripple-letter');
-      textElement.appendChild(span);
-    });
-  });
-
-  li.addEventListener('mouseleave', () => {
-    const textElement = li.querySelector('.ripple-text');
-    textElement.textContent = textElement.textContent.replace(/\u00A0/g, ' '); // Reset the text and restore spaces
-  });
-});

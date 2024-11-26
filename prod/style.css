@@ -280,7 +280,7 @@ section {
   gap: 12px;
 }
 
-.features-container {
+.where-container {
   display: flex;
   width: 100%;
   max-width: 880px;
@@ -290,12 +290,12 @@ section {
 }
 
 @media (max-width: 840px) {
-  .features-container {
+  .where-container {
     flex-direction: column;
   }
 }
 
-.features-container > li {
+.where-container > li {
   display: flex;
   padding: 32px;
   background: #ffffff;
@@ -310,7 +310,15 @@ section {
     0px 8px 16px -6px rgba(24, 39, 75, 0.08);
 }
 
-.features-container > li > .icon {
+.where-container > li:first-child {
+  transform: rotate(-3deg) translateY(9px);
+}
+
+.where-container > li:last-child {
+  transform: rotate(3deg) translateY(9px);
+}
+
+.where-container > li > .icon {
   width: 24px;
   height: 24px;
   margin-bottom: 8px;
@@ -580,66 +588,13 @@ header > img {
 .pause > .icon  {background-image: url("../assets/hero/pause.svg");}
 .play > .icon   {background-image: url("../assets/hero/play.svg");}
 
-/* where to use section — cleanup later!!! */
-
-.big-list {
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-}
-
-.big-list > li {
-  padding: 0;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.big-list > li > p {
-  color: #191B1E;
-  text-align: center;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 900;
-  line-height: normal;
-}
-
-.ripple-text {
-  display: inline-block;
-  font-size: 16px;
-  color: #191B1E; /* Default color */
-  transition: color 0.3s ease;
-}
-
-.big-list li:hover .ripple-text {
-  color: #632793; /* Hover color */
-}
-
-/* Ripple effect for letters */
-.ripple-letter {
-  display: inline-block;
-  position: relative;
-  animation: ripple 0.35s ease-out forwards;
-}
-
-@keyframes ripple {
-  0% {
-    transform: translateY(0); /* Start position */
-    opacity: 1;
-  }
-  50% {
-    transform: translateY(calc(-2px * var(--scale-factor))); /* Scaled upward motion */
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateY(calc(0 * var(--scale-factor))); /* Scaled downward motion */
-    opacity: 1;
-  }
-}
-
 /* media queries */
+
+@media (max-width: 840px) {
+    .where-container > li:last-child, .where-container > li:first-child {
+    transform: rotate(0deg) translateY(0px);
+  }
+}
 
 @media (max-width: 620px) {
 
