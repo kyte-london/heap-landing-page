@@ -87,39 +87,28 @@ document.getElementById("year").innerHTML = new Date().getFullYear();
 
 
 
-// holo test
+// holo on scroll
 
 document.addEventListener("DOMContentLoaded", () => {
-  const cards = document.querySelectorAll(".holo-card");
+  const screens = document.querySelectorAll(".screen");
+  let lastScrollY = window.scrollY;
 
   const onScroll = () => {
-    cards.forEach((card) => {
-      const screen = card.querySelector(".screen");
+    const currentScrollY = window.scrollY;
+    const scrollDelta = currentScrollY - lastScrollY;
 
-      // Get the element's position relative to the viewport
-      const rect = card.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-
-      // Calculate the progress: 0 when bottom of element hits bottom of viewport,
-      // 1 when top of element hits top of viewport
-      const progress = Math.min(
-        Math.max(0, 1 - rect.top / (windowHeight + rect.height)),
-        1
+    screens.forEach((screen) => {
+      const currentBackgroundY = parseFloat(
+        getComputedStyle(screen).backgroundPositionY
       );
 
-      // Interpolate background position
-      const minY = 0; // Start at 20px
-      const maxY = 200; // End at 500px
-      const backgroundPositionY = minY + progress * (maxY - minY);
+      const newBackgroundY = currentBackgroundY + scrollDelta * 1.8; 
+      const limitedBackgroundY = ((newBackgroundY % 240) + 240) % 240;
 
-      // Update the background position
-      screen.style.backgroundPosition = `0 ${backgroundPositionY}px`;
+      screen.style.backgroundPosition = `0 ${limitedBackgroundY}px`;
     });
+
+    lastScrollY = currentScrollY;
   };
-
-  // Attach the scroll event
   window.addEventListener("scroll", onScroll);
-
-  // Run on page load
-  onScroll();
 });
