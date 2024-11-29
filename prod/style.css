@@ -588,6 +588,49 @@ header > img {
 .pause > .icon  {background-image: url("../assets/hero/pause.svg");}
 .play > .icon   {background-image: url("../assets/hero/play.svg");}
 
+
+/* holo cards */ 
+
+.holo-card {
+  width: 100%;
+  height: 150px;
+  position: relative;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("../assets/holo-card/test-base.png");
+}
+
+.holo-card > div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.holo-card > div.highlight {
+  background-image: url("../assets/holo-card/test-highlight.png");
+}
+
+.holo-card > div.multiply {
+  mix-blend-mode: multiply;
+  background-image: url("../assets/holo-card/test-multiply.png");
+}
+
+.holo-card > div.screen {
+  mix-blend-mode: screen;
+  background-image: url("../assets/holo-card/test-screen.png");
+  background-repeat: repeat;
+  background-position: 0 20px;
+  transition: background-position .2s linear;
+}
+
+.holo-card > div.screen {
+  background-position: 0 20px;
+}
+
 /* media queries */
 
 @media (max-width: 840px) {

@@ -87,4 +87,39 @@ document.getElementById("year").innerHTML = new Date().getFullYear();
 
 
 
+// holo test
 
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".holo-card");
+
+  const onScroll = () => {
+    cards.forEach((card) => {
+      const screen = card.querySelector(".screen");
+
+      // Get the element's position relative to the viewport
+      const rect = card.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      // Calculate the progress: 0 when bottom of element hits bottom of viewport,
+      // 1 when top of element hits top of viewport
+      const progress = Math.min(
+        Math.max(0, 1 - rect.top / (windowHeight + rect.height)),
+        1
+      );
+
+      // Interpolate background position
+      const minY = 0; // Start at 20px
+      const maxY = 200; // End at 500px
+      const backgroundPositionY = minY + progress * (maxY - minY);
+
+      // Update the background position
+      screen.style.backgroundPosition = `0 ${backgroundPositionY}px`;
+    });
+  };
+
+  // Attach the scroll event
+  window.addEventListener("scroll", onScroll);
+
+  // Run on page load
+  onScroll();
+});
