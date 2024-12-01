@@ -622,6 +622,7 @@ header > img {
   background-position-y: 20px;
   background-position-x: center;
   transition: background-position .2s linear;
+  opacity: .9;
 }
 
 .holo-card.visits                     {background-image: url("../assets/holo-card/visits-base.png");}
