@@ -190,9 +190,9 @@ input {
 .icon-container {
   width: 40px;
   height: 40px;
-  background-image: url(../assets/logo/icon-background.png);
-  background-size: 80px;
-  background-position: top center;
+  background-image: url(../assets/holo-card/networking-screen.png);
+  background-size: 120px;
+  background-position-y: 156px;
   border-radius: 8px;
   position: relative;
   transition: 
@@ -280,7 +280,7 @@ section {
   gap: 12px;
 }
 
-.features-container {
+.where-container {
   display: flex;
   width: 100%;
   max-width: 880px;
@@ -290,12 +290,12 @@ section {
 }
 
 @media (max-width: 840px) {
-  .features-container {
+  .where-container {
     flex-direction: column;
   }
 }
 
-.features-container > li {
+.where-container > li {
   display: flex;
   padding: 32px;
   background: #ffffff;
@@ -310,7 +310,15 @@ section {
     0px 8px 16px -6px rgba(24, 39, 75, 0.08);
 }
 
-.features-container > li > .icon {
+.where-container > li:first-child {
+  transform: rotate(-3deg) translateY(9px);
+}
+
+.where-container > li:last-child {
+  transform: rotate(3deg) translateY(9px);
+}
+
+.where-container > li > .icon {
   width: 24px;
   height: 24px;
   margin-bottom: 8px;
@@ -366,7 +374,7 @@ section {
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
-  opacity: .4;
+  opacity: .6;
   transition:
     opacity .4s ease-out,
     height .4s ease-out,
@@ -580,7 +588,63 @@ header > img {
 .pause > .icon  {background-image: url("../assets/hero/pause.svg");}
 .play > .icon   {background-image: url("../assets/hero/play.svg");}
 
+
+/* holo cards */ 
+
+.holo-card {
+  width: 100%;
+  max-width: 220px;
+  height: 150px;
+  position: relative;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.holo-card > div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.holo-card > div.multiply {
+  mix-blend-mode: multiply;
+  z-index: 100;
+}
+
+.holo-card > div.screen {
+  mix-blend-mode: screen;
+  background-repeat: repeat;
+  background-size: 240px;
+  background-position-y: 20px;
+  background-position-x: center;
+  transition: background-position .2s linear;
+  opacity: .9;
+}
+
+.holo-card.visits                     {background-image: url("../assets/holo-card/visits-base.png");}
+.holo-card.visits > div.highlight     {background-image: url("../assets/holo-card/visits-highlight.png");}
+.holo-card.visits > div.multiply      {background-image: url("../assets/holo-card/visits-multiply.png");}
+.holo-card.visits > div.screen        {background-image: url("../assets/holo-card/visits-screen.png");}
+.holo-card.networking                 {background-image: url("../assets/holo-card/networking-base.png");}
+.holo-card.networking > div.highlight {background-image: url("../assets/holo-card/networking-highlight.png");}
+.holo-card.networking > div.multiply  {background-image: url("../assets/holo-card/networking-multiply.png");}
+.holo-card.networking > div.screen    {background-image: url("../assets/holo-card/networking-screen.png");}
+.holo-card.transit                    {background-image: url("../assets/holo-card/transit-base.png");}
+.holo-card.transit > div.highlight    {background-image: url("../assets/holo-card/transit-highlight.png");}
+.holo-card.transit > div.multiply     {background-image: url("../assets/holo-card/transit-multiply.png");}
+.holo-card.transit > div.screen       {background-image: url("../assets/holo-card/transit-screen.png");}
+
 /* media queries */
+
+@media (max-width: 840px) {
+    .where-container > li:last-child, .where-container > li:first-child {
+    transform: rotate(0deg) translateY(0px);
+  }
+}
 
 @media (max-width: 620px) {
 

@@ -84,3 +84,30 @@ document.getElementById('scroll-to-form').addEventListener('click', function(eve
 
 // current year on footer
 document.getElementById("year").innerHTML = new Date().getFullYear();
+
+
+
+// holo on scroll
+
+document.addEventListener("DOMContentLoaded", () => {
+  const screens = document.querySelectorAll(".screen");
+  let lastScrollY = window.scrollY;
+
+  const onScroll = () => {
+    const currentScrollY = window.scrollY;
+    const scrollDelta = currentScrollY - lastScrollY;
+
+    screens.forEach((screen) => {
+      const currentBackgroundY = parseFloat(
+        getComputedStyle(screen).backgroundPositionY
+      );
+
+      const newBackgroundY = currentBackgroundY - scrollDelta * 3;
+      screen.style.backgroundPosition = `0 ${newBackgroundY}px`;
+    });
+
+    lastScrollY = currentScrollY;
+  };
+
+  window.addEventListener("scroll", onScroll);
+});
