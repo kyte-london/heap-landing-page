@@ -102,13 +102,12 @@ document.addEventListener("DOMContentLoaded", () => {
         getComputedStyle(screen).backgroundPositionY
       );
 
-      const newBackgroundY = currentBackgroundY + scrollDelta * 1.8; 
-      const limitedBackgroundY = ((newBackgroundY % 240) + 240) % 240;
-
-      screen.style.backgroundPosition = `0 ${limitedBackgroundY}px`;
+      const newBackgroundY = currentBackgroundY - scrollDelta * 5;
+      screen.style.backgroundPosition = `0 ${newBackgroundY}px`;
     });
 
     lastScrollY = currentScrollY;
   };
+
   window.addEventListener("scroll", onScroll);
 });
