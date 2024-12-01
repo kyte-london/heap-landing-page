@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
         getComputedStyle(screen).backgroundPositionY
       );
 
-      const newBackgroundY = currentBackgroundY - scrollDelta * 5;
+      const newBackgroundY = currentBackgroundY - scrollDelta * 3;
       screen.style.backgroundPosition = `0 ${newBackgroundY}px`;
     });
 

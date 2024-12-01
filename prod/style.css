@@ -192,6 +192,7 @@ input {
   height: 40px;
   background-image: url(../assets/holo-card/networking-screen.png);
   background-size: 120px;
+  background-position-y: 156px;
   border-radius: 8px;
   position: relative;
   transition: 
