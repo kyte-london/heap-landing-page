@@ -41,6 +41,20 @@ h3 {
   -ms-user-select: none;
 }
 
+h3 > a {
+  color: #191B1E;
+}
+
+h3 > .chevron {
+  display: inline-block;
+  height: 32px;
+  width: 24px;
+  background-image: url('../assets/icons/chevron--right.svg');
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 h4 {
   font-size: 18px;
   font-weight: 800;
@@ -637,6 +651,29 @@ header > img {
 .holo-card.transit > div.highlight    {background-image: url("../assets/holo-card/transit-highlight.png");}
 .holo-card.transit > div.multiply     {background-image: url("../assets/holo-card/transit-multiply.png");}
 .holo-card.transit > div.screen       {background-image: url("../assets/holo-card/transit-screen.png");}
+
+/* legal pages */
+
+section.legal {
+  padding-top: 180px;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+section.legal > h2, section.legal > p {
+  color: #191B1E;
+}
+
+section.legal > h2 {
+  font-weight: 800;
+  font-size: 26px;
+}
+
+
+
 
 /* media queries */
 
