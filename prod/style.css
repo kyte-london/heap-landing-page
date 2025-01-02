@@ -655,7 +655,8 @@ header > img {
 /* legal pages */
 
 section.legal {
-  padding-top: 180px;
+  padding-top: 80px;
+  padding-bottom: 80px;
   align-items: flex-start;
   gap: 24px;
   width: 100%;
@@ -663,13 +664,29 @@ section.legal {
   margin: 0 auto;
 }
 
+section.legal > h1 {
+  font-size: 40px;
+}
+
 section.legal > h2, section.legal > p {
   color: #191B1E;
 }
 
 section.legal > h2 {
+  margin-top: 24px;
   font-weight: 800;
   font-size: 26px;
+}
+
+section.legal > h3 {
+  margin-top: 8px;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+section.legal li {
+  text-align: left;
+  margin-top: 4px;
 }
 
 
