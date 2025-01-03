@@ -659,36 +659,66 @@ section.legal {
   padding-bottom: 80px;
   align-items: flex-start;
   gap: 24px;
-  width: 100%;
   max-width: 800px;
   margin: 0 auto;
+}
+
+section.legal .logo {
+  color: #191B1E;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;  
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+section.legal .logo > span {
+  width: 20px;
+  height: 20px;
+  background-image: url("../assets/logo-icon-big.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+section.legal > h1,
+section.legal > h2, 
+section.legal > h3,
+section.legal li, 
+section.legal > p {
+  color: #191B1E;
+  text-align: left;
 }
 
 section.legal > h1 {
   font-size: 40px;
 }
 
-section.legal > h2, section.legal > p {
-  color: #191B1E;
-}
-
 section.legal > h2 {
   margin-top: 24px;
-  font-weight: 800;
   font-size: 26px;
+  font-weight: 800;
 }
 
 section.legal > h3 {
   margin-top: 8px;
-  font-weight: 800;
   font-size: 20px;
 }
 
 section.legal li {
-  text-align: left;
   margin-top: 4px;
 }
 
+section.legal .date {
+  padding: 4px 8px;
+  width: initial;
+  display: inline-block;
+  font-size: 12px;
+  background-color: #E7EBF1;
+  border-radius: 8px;
+}
 
 
 
