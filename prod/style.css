@@ -41,6 +41,20 @@ h3 {
   -ms-user-select: none;
 }
 
+h3 > a {
+  color: #191B1E;
+}
+
+h3 > .chevron {
+  display: inline-block;
+  height: 32px;
+  width: 24px;
+  background-image: url('../assets/icons/chevron--right.svg');
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 h4 {
   font-size: 18px;
   font-weight: 800;
@@ -637,6 +651,76 @@ header > img {
 .holo-card.transit > div.highlight    {background-image: url("../assets/holo-card/transit-highlight.png");}
 .holo-card.transit > div.multiply     {background-image: url("../assets/holo-card/transit-multiply.png");}
 .holo-card.transit > div.screen       {background-image: url("../assets/holo-card/transit-screen.png");}
+
+/* legal pages */
+
+section.legal {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  align-items: flex-start;
+  gap: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+section.legal .logo {
+  color: #191B1E;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;  
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+section.legal .logo > span {
+  width: 20px;
+  height: 20px;
+  background-image: url("../assets/logo-icon-big.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+section.legal > h1,
+section.legal > h2, 
+section.legal > h3,
+section.legal li, 
+section.legal > p {
+  color: #191B1E;
+  text-align: left;
+}
+
+section.legal > h1 {
+  font-size: 40px;
+}
+
+section.legal > h2 {
+  margin-top: 24px;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+section.legal > h3 {
+  margin-top: 8px;
+  font-size: 20px;
+}
+
+section.legal li {
+  margin-top: 4px;
+}
+
+section.legal .date {
+  padding: 4px 8px;
+  width: initial;
+  display: inline-block;
+  font-size: 12px;
+  background-color: #E7EBF1;
+  border-radius: 8px;
+}
+
+
 
 /* media queries */
 
