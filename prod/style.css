@@ -732,6 +732,16 @@ section.legal img {
   max-height: 512px;
 }
 
+.featured-on {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.featured-on > a > img {
+  height: 48px;
+}
+
 
 /* media queries */
 
